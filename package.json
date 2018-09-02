@@ -1,0 +1,22 @@
+{
+  "name": "gamebutton",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Peocandy",
+  "license": "ISC",
+  "dependencies": {
+    "express": "*",
+    "mysql": "*",
+    "ent": "*",
+    "axios": "^0.18.0",
+    "passport": "^0.4.0",
+    "passport-facebook": "^2.1.1",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2",
+    "socket.io": "^2.1.1"
+  }
+}

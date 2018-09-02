@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="utf-8">
+<head>
+    <meta charset="UTF-8">
+    <title>Game Index</title>
+    <link rel="shortcut icon" type="image/png" href="img/fa_icon.png"/>
+    <!-- Include Bootstrap css -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Include Font-awesome css -->
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+
+    <!-- Include Custom_main.css css -->
+    <link rel="stylesheet" type="text/css" href="css/custom_main.css"/>
+    <!-- Include Main.css -->
+    <link rel="stylesheet" type="text/css" href="css/main.css"/>
+
+    <!-- Include font dosis -->
+    <link href="https://fonts.googleapis.com/css?family=Dosis|Lora|Merriweather" rel="stylesheet">
+
+    <!-- Include Socket.IO -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.dev.js"></script>
+    <!-- Include Jquery -->
+    <script src="js/jquery-3.3.1.js" type="text/javascript"></script>
+    <!-- Include Axios -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js" type="text/javascript"></script>
+    <!-- Include Notify -->
+    <script src="js/bootstrap-notify.js" type="text/javascript"></script>
+    <!--Include dropdown popper.min.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <!--Include bootstrap.js -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+
+    <!--Include handle_main.js -->
+    <script src="js/handle_main.js" type="text/javascript"></script>
+    <!--Include main.js -->
+    <script src="js/main.js" type="text/javascript"></script>
+</head>
+<body>
+<!--menu-->
+<div id="menu">
+    <div class="container">
+        <ul class="nav justify-content-end" style="background: #1a86ca;padding: 0 15px;">
+
+            <li class="nav-item dropdown  ">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                   aria-expanded="false">
+                    <img class="avata_player" src="img/default-avatar.png"><span class="player_name">Username</span>
+                </a>
+                <div class="dropdown-menu dropdown_userinfo" style="right: 0">
+
+                    <a class="dropdown-item" href="referrent_link.html"><i class="fa fa-user-o" aria-hidden="true"></i> Cá nhân</a>
+                    <a class="dropdown-item" href="login.html"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+                </div>
+            </li>
+
+            <li class="nav-item dropdown ">
+                <a class="nav-link icon_bell" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                   aria-expanded="false">
+                    <i class="fa fa-bell-o" aria-hidden="true"><span class="notification">!</span></i>
+                </a>
+                <div class="dropdown-menu dropdown_notification">
+                    <div class="beeperNub"></div>
+
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!--Container-->
+<div class="container">
+    <!--banner-->
+    <div id="header" class="row">
+        <div class="banner_ads col-md-12">
+            <img width="100%" height="100" src="img/banner3.jpg">
+        </div>
+    </div>
+    <!--menu-->
+    <div class="menu-bar">
+        <nav style="background: #1a86ca;" class="navbar navbar-expand-lg navbar-light">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="navbar-brand" href="/"><i class="fa fa-home" aria-hidden="true"></i> Trang Chủ</a>
+                </li>
+            </ul>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="navbar-brand" href="top_rank"><i class="fa fa-trophy" aria-hidden="true"></i>
+                            Bảng xếp hạng</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="navbar-brand" href="history"><i class="fa fa-history" aria-hidden="true"></i>
+                            Lịch sử chơi</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="navbar-brand " href="news"><i class="fa fa-newspaper-o" aria-hidden="true"></i>
+                            Tin tức</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="row">
+        <div class=" col-md-12" style="margin-left: 10px;margin-bottom: 20px">
+            <span style="font-size: 15px;color: #333;font-weight: 600"><a style="color: #333" href="index.html"><i style="margin-right: 5px" class="fa fa-home" aria-hidden="true"></i>Trang chủ </a></span> > <span style="font-size: 15px;color: #333;font-weight: 600"> Cá nhân</span>
+
+        </div>
+    </div>
+    <div class="row referrentlink">
+        <div class="box_referuser col-md-3">
+            <div class="panel-heading">
+                <i class="fa fa-user-circle"></i> Người chia sẻ
+            </div>
+            <ul class="list-group">
+                <li class="list-group-item" style="text-align: center;">
+                    <img src="img/default-avatar.png" style="width: 80px;height: 80px" alt="Tuấn Lợi"
+                         class="img-circle">
+                    <div style="font-weight: bold;color: #2CA8FF;">Username</div>
+                </li>
+                <li class="list-group-item"><span><i style="font-weight: bold;color: green;"  class="fa fa-phone" aria-hidden="true"></i></span><span style="font-weight: bold;color: green;"> Số điện thoại:</span><span style="color: gray;"> 094454547</span></li>
+                <li class="list-group-item"><span><i style="font-weight: bold;color: green;" class="fa fa-calendar" aria-hidden="true"></i></span><span style="font-weight: bold;color: green;"> Ngày tham gia:</span><span style="color: gray;"> 28/08/2018</span></li>
+                <li class="list-group-item">
+                    <a class="change_userinfo" href="#">
+                        <span style="font-weight: bold;color: green;"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
+                        <span style="font-weight: bold;color: green;">  Cập nhập số điện thoại</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="box_referlink col-md-9">
+            <div class="panel-heading">
+                <i class="fa fa-info-circle"></i> Link chia sẻ
+            </div>
+            <div class="panel-body">
+                <div class="linkrefer">
+                    <strong style="color: #2CA8FF;">Link chia sẻ:</strong><br>
+                    <!--                    <a style="color: black; font-size: 17px;" href="">-->
+                    <input readonly  style="padding: 10px;width: 100%;border: 1px solid #cecece; border-radius: 4px;" value="https://www.facebook.com/haopu1996/about?lst=100005130186084%3A100005130186084%3A1535418222">
+                </div>
+                <div class="form_edituser" style="display: none">
+                    <div class="wrapper fadeInDown">
+                        <div id="formContent">
+                            <div class="modal-header text_title">
+                                <h4 class="modal-title ">Cập nhật số điện thoại</h4>
+                                <button type="button" class="close_formuser"  style="" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="fadeIn first">
+                                <img src="img/default-avatar.png" id="icon" alt="User Icon" />
+
+                            </div>
+                            <div class=""><span>Username</span></div>
+                            <!-- Login Form -->
+                            <form id="formuser_info">
+                                <input type="text" id="number_phone" class="fadeIn second" name="number_phone" placeholder="Số điện thoại">
+                                <input type="submit" class="fadeIn fourth" value="Cập Nhật">
+                            </form>
+                            <!-- Remind Passowrd -->
+
+                        </div>
+                    </div>
+                </div>
+                <div class="tree_view">
+                    <div id="wrapper">
+                        <h3>Danh sách chia sẻ</h3>
+                        <ul class="tree">
+                            <li><img src="img/default-avatar.png"><span><a href="#" style="color: #2CA8FF">Trần Nhữ Long</a></span>
+                                <ul>
+                                    <li><img src="img/default-avatar.png"><span><a style="color: #2CA8FF" href="#">Lưu Danh Kiên</a></span></li>
+                                    <li><img src="img/default-avatar.png"><span><a href="#" style="color: #2CA8FF">Trần Tiến Đạt</a></span></li>
+                                    <li class=""><img src="img/default-avatar.png"><span><a style="color: #2CA8FF" href="#">Lưu Bá Ôn</a></span></li>
+                                </ul>
+                            </li>
+                            <li><img src="img/default-avatar.png"><span><a style="color: #2CA8FF" href="#">Trần Tiến Đạt</a></span>
+                                <ul>
+                                    <li><img src="img/default-avatar.png"><span><a href="#"style="color: #2CA8FF">Trần Tiến Như</a></span></li>
+                                    <li><img src="img/default-avatar.png"><span><a style="color: #2CA8FF" href="#">Trần Đức</a></span></li>
+                                    <li class=""><img src="img/default-avatar.png"><span><a style="color: #2CA8FF" href="#">Trần Đức</a></span></li>
+                                    <li><img src="img/default-avatar.png"><span><a style="color: #2CA8FF" href="#">Trần Đức</a></span></li>
+                                    <li><img src="img/default-avatar.png"><span><a style="color: #2CA8FF" href="#">Trần Đức</a></span></li>
+                                    <li class=""><img src="img/default-avatar.png"><span><a style="color: #2CA8FF" href="#">Trần Đức</a></span></li>
+                                    <li><img src="img/default-avatar.png"><span><a style="color: #2CA8FF" href="#">Trần Đức Vũ</a></span></li>
+                                    <li><img src="img/default-avatar.png"><span><a style="color: #2CA8FF" href="#">Trần Đức Việt</a></span></li>
+                                    <li class=""><img src="img/default-avatar.png"><span><a style="color: #2CA8FF" href="#">Trần Đức</a></span></li>
+                                    <li><img src="img/default-avatar.png"><span><a style="color: #2CA8FF" href="#">Trần Đức Tài</a></span></li>
+                                    <li><img src="img/default-avatar.png"><span><a style="color: #2CA8FF" href="#">Trần Đức</a></span></li>
+                                    <li class=""><img src="img/default-avatar.png"><span><a style="color: #2CA8FF" href="#">Trần Đức</a></span></li>
+                                    <li><img src="img/default-avatar.png"><span><a style="color: #2CA8FF" href="#">Trần Đức A</a></span></li>
+                                    <li><img src="img/default-avatar.png"><span><a style="color: #2CA8FF" href="#">Trần Đức Bi</a></span></li>
+                                    <li class=""><img src="img/default-avatar.png"><span><a style="color: #2CA8FF" href="#">Trần Đức C</a></span></li>
+                                </ul>
+                            </li>
+                            <li class=""><img src="img/default-avatar.png"><span><a style="color: #2CA8FF" href="#">Nguyễn Văn Hoàn</a></span>
+                                <ul>
+                                    <li><img src="img/default-avatar.png"><span><a style="color: #2CA8FF" href="#">Vũ Đức Trí</a></span></li>
+                                    <li class=><img src="img/default-avatar.png"><span><a style="color: #2CA8FF" href="#">Trần Đức Hoàn</a></span></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        Copyright © 2018 Inet Solutions. All rights reserved.
+    </div>
+</div>
+</body>
+<footer>
+
+</footer>
+</html>

@@ -1,0 +1,85 @@
+<!Doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Game Index</title>
+    <link rel="shortcut icon" type="image/png" href="img/fa_icon.png"/>
+
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+
+    <!-- Include Jquery -->
+    <script src="js/jquery-3.3.1.js" type="text/javascript"></script>
+
+
+</head>
+<body>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container text-center">
+    <form class="form-signin" id='login_form' action="">
+        <h2 class="text-center">Log In Bigtime
+            <small> let's go!</small>
+        </h2>
+        <form class='facebookLogin'>
+
+            <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with"
+                 data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
+        </form>
+    </form>
+</div>
+
+
+<fb:login-button
+        scope="public_profile,email"
+        onlogin="checkLoginState();">
+</fb:login-button>
+
+
+<div id="fb-root"></div>
+</body>
+
+<script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '863725693963905',
+            cookie     : true,
+            xfbml      : true,
+            version    : 'v3.1'
+        });
+
+        FB.AppEvents.logPageView();
+
+    };
+
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+    FB.getLoginStatus(function(response) {
+        statusChangeCallback(response);
+    });
+
+    function checkLoginState() {
+        FB.getLoginStatus(function(response) {
+            statusChangeCallback(response);
+        });
+    }
+
+    $(document).ready(function () {
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v3.1&appId=485660288471542&autoLogAppEvents=1';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    });
+</script>
+</html>

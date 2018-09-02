@@ -1,0 +1,619 @@
+<!Doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Game Index</title>
+    <link rel="shortcut icon" type="image/png" href="img/fa_icon.png"/>
+    <!-- Include Bootstrap css -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Include Font-awesome css -->
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+
+    <!-- Include Custom_main.css css -->
+    <link rel="stylesheet" type="text/css" href="css/custom_main.css"/>
+    <!-- Include Main.css -->
+    <link rel="stylesheet" type="text/css" href="css/main.css"/>
+
+    <!-- Include font dosis -->
+    <link href="https://fonts.googleapis.com/css?family=Dosis|Lora|Merriweather" rel="stylesheet">
+
+    <!-- Include Socket.IO -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.dev.js"></script>
+    <!-- Include Jquery -->
+    <script src="js/jquery-3.3.1.js" type="text/javascript"></script>
+    <!-- Include Axios -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js" type="text/javascript"></script>
+    <!-- Include Notify -->
+    <script src="js/bootstrap-notify.js" type="text/javascript"></script>
+    <!--Include dropdown popper.min.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <!--Include bootstrap.js -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+
+    <!--Include handle_main.js -->
+    <script src="js/handle_main.js" type="text/javascript"></script>
+    <!--Include main.js -->
+    <script src="js/main.js" type="text/javascript"></script>
+</head>
+
+<body>
+<!--menu-->
+<div id="menu">
+    <div class="container">
+        <ul class="nav justify-content-end" style="background: #1a86ca;padding: 0 15px;">
+
+            <li class="nav-item dropdown  ">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                   aria-expanded="false">
+                    <img class="avata_player" src="img/default-avatar.png"><span class="player_name">Username</span>
+                </a>
+                <div class="dropdown-menu dropdown_userinfo" style="right: 0">
+
+                    <a class="dropdown-item" href="/referrent_link"><i class="fa fa-user-o" aria-hidden="true"></i> Cá
+                        nhân</a>
+                    <a class="dropdown-item" href="/login"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+                </div>
+            </li>
+
+            <li class="nav-item dropdown ">
+                <a class="nav-link icon_bell" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                   aria-expanded="false">
+                    <i class="fa fa-bell-o" aria-hidden="true"><span class="notification">!</span></i>
+                </a>
+                <div class="dropdown-menu dropdown_notification">
+                    <div class="beeperNub"></div>
+                    <h3 class="uiHeaderTitle" aria-hidden="true" style="    color: #333;
+    font-size: 12px;">Thông báo</h3>
+
+                    <ul class="notification_content">
+                        <li class="empty_nofication">Hiện chưa có thông báo nào cả</li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!--Container-->
+<div class="container">
+    <!--banner-->
+    <div id="header" class="row">
+        <div class="banner_ads col-md-12">
+            <img width="100%" height="100" src="img/banner3.jpg">
+        </div>
+    </div>
+    <!--menu-->
+    <div class="menu-bar">
+        <nav style="background: #1a86ca;" class="navbar navbar-expand-lg navbar-light">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="navbar-brand" href="/"><i class="fa fa-home" aria-hidden="true"></i> Trang Chủ</a>
+                </li>
+            </ul>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="navbar-brand" href="top_rank"><i class="fa fa-trophy" aria-hidden="true"></i>
+                            Bảng xếp hạng</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="navbar-brand" href="history"><i class="fa fa-history" aria-hidden="true"></i>
+                            Lịch sử chơi</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="navbar-brand " href="news"><i class="fa fa-newspaper-o" aria-hidden="true"></i>
+                            Tin tức</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <!-- main_content -->
+    <div class="main_content">
+        <!--title-->
+        <div class="title row">
+            <div class="col-md-12">
+                <h1 class="top_main_title">Big Time</h1>
+            </div>
+        </div>
+
+        <!--play-->
+        <div class="play row">
+            <div class="col-md-4 box_ranknow">
+                <div class="ranknow_title"><span><i class="fa fa-flag-o" aria-hidden="true"></i></span>
+                    <span> Top 10</span></div>
+                <div class="ranknow_content">
+                    <table class="ranknow_list">
+                        <tr style="background: #66a6ff; font-weight: bold">
+                            <td>Hạng</td>
+                            <td>Tên người chơi</td>
+                            <td>Thời gian giữ</td>
+                        </tr>
+                        <tr>
+                            <td><p class="numbertop_1">1</p></td>
+                            <td>haha</td>
+                            <td>150s</td>
+                        </tr>
+                        <tr>
+                            <td><p class="numbertop_2">2</p></td>
+                            <td>hehe</td>
+                            <td>149s</td>
+                        </tr>
+                        <tr>
+                            <td><p class="numbertop_3">3</p></td>
+                            <td>honganh</td>
+                            <td>148s</td>
+                        </tr>
+                        <tr>
+                            <td><p class="numbertop_n">4</p></td>
+                            <td>chimsedinang</td>
+                            <td>147s</td>
+                        </tr>
+                        <tr>
+                            <td><p class="numbertop_n">5</p></td>
+                            <td>Huonghana</td>
+                            <td>146s</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td><p class="numbertop_n">6</p></td>
+                            <td>Huonghana</td>
+                            <td>144s</td>
+                        </tr>
+                        <tr>
+                            <td><p class="numbertop_n">7</p></td>
+                            <td>Huonghana</td>
+                            <td>120s</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td><p class="numbertop_n">8</p></td>
+                            <td>Huonghana</td>
+                            <td>110s</td>
+                        </tr>
+                        <tr>
+                            <td><p class="numbertop_n">9</p></td>
+                            <td>Huonghana</td>
+                            <td>100s</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td><p class="numbertop_n">10</p></td>
+                            <td>Huonghana</td>
+                            <td>80s</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <!--end rank-->
+            <div class="col-md-4 box_btlplay">
+                <button id="btn_takeFlag" type="button" data-toggle="modal"
+                        class="btn btn-danger btn-lg btn3d"><span class="fa fa-play-circle-o"></span> Play
+                </button>
+                <!--<button disabled id="loading" style="display: none" class="btn btn-danger btn-lg btn3d"><span id="time">180</span>-->
+                <!--s-->
+                <!--</button>-->
+            </div>
+            <div class="col-md-4 box_information" style="">
+                <div style="" class="container_information">
+                    <div class="title_information" style=" "><i class="fa fa-diamond" aria-hidden="true"></i>
+                        Xin chào <span class="player_name">: Username</span>
+                    </div>
+                    <ul>
+                        <li style="">Còn lại : <span class="play_left"></span> lượt</li>
+                        <li style="">Đã dùng : <span class="has_left"></span> lượt</li>
+                        <li style="">Điểm cao nhất : <span class="highest"> s</span></li>
+                        <li style="">Thứ hạng : <span class="ranking"></span></li>
+                    </ul>
+                    <ul>
+                        <li>
+                            Số lượt thưởng: <span class="play_left"></span> lượt
+                        </li>
+                        </li>
+                        <li style="">
+                            <button type="button" class="btn bg-blue fs-it-btn btn_change_turn">
+                                Đổi lượt chơi
+                                <span class="fs-it-btn-vertical-line"></span>
+                                <i class="fa fa-plus" aria-hidden="true"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!--bxh-->
+        <div class="introduce row">
+            <!--- .box_news -->
+            <div class="col-md-4 box_news">
+                <div class="new_container">
+                    <div class="title_boxnews"><i class="fa fa-newspaper-o" aria-hidden="true"></i><span
+                            class="newsbox_span"> Tin tức nổi bật </span></div>
+                    <ul class="new_container_ul">
+                        <li>
+                            <a href="#" class="box_news_href">
+                                <div class="img_thumbnail"><img src="img/hari.jpg"></div>
+                                <div class="entry_content">Hari Won (하리원) tên thật Lưu Esther, là một nữ ca sĩ, diễn
+                                    viên và
+                                    người...
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="box_news_href">
+                                <div class="img_thumbnail"><img src="img/hari.jpg"></div>
+                                <div class="entry_content">Hari Won (하리원) tên thật Lưu Esther, là một nữ ca sĩ, diễn
+                                    viên và
+                                    người...
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="box_news_href">
+                                <div class="img_thumbnail"><img src="img/hari.jpg"></div>
+                                <div class="entry_content">Hari Won (하리원) tên thật Lưu Esther, là một nữ ca sĩ, diễn
+                                    viên và
+                                    người...
+                                </div>
+                            </a>
+                        </li>
+
+                    </ul>
+                    <div class="view_more"><a href="https://tintuc.vn">Xem Thêm...</a></div>
+                </div>
+            </div>
+            <!-- end box_news -->
+
+            <!-- box_introduce -->
+            <div class="col-md-4 box_introduce">
+                <ul class="box_introduce_ul">
+                    <li class="box_introduce_li">
+                        <a class="" role="button" href="#" data-toggle="modal"
+                           data-target="#modal_moreturn"><img src="img/4.png">Thêm lượt chơi</a>
+                    </li>
+                    <li class="box_introduce_li">
+                        <a class="" role="button" href="#" data-toggle="modal"
+                           data-target="#modal_regulations"><img src="img/5.png"> Hướng dẫn chơi</a>
+                    </li>
+                    <!--<li class="box_introduce_li">-->
+                    <!--<a class="" role="button" href="#" data-toggle="modal"-->
+                    <!--data-target="#modal_rank"><img src="img/3.png"> Bảng xếp hạng</a>-->
+                    <!--</li>-->
+                </ul>
+            </div>
+            <!-- end box_introduce -->
+
+            <!-- .box_chat -->
+            <div class="col-md-4 box_chat">
+                <div class="chat_window">
+                    <div class="top_menu">
+                        <div class="title"><i class="fa fa-comment-o" style="margin-right: 10px"></i>Chat room</div>
+                    </div>
+
+                    <div class="login page">
+                        <div class="form">
+                            <h3 class="title">Tên của bạn là gì?</h3>
+                            <input class="usernameInput" type="text" maxlength="14"/>
+                        </div>
+                    </div>
+
+                    <div class="pages">
+                        <li class="chat page" style="list-style: none">
+                            <div class="chatArea">
+                                <ul class="messages"></ul>
+                            </div>
+                        </li>
+                    </div>
+
+                    <div class="bottom_wrapper clearfix">
+                        <input class="inputMessage message_input_wrapper" placeholder="Nhập tin nhắn của bạn..."/>
+                        <div class="send_message">
+                            <div class="icon"></div>
+                            <div class="text"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="message_template">-->
+                <!--<li class="message">-->
+                <!--<div class="avatar">-->
+                <!--<img src="img/default-avatar.png">-->
+                <!--</div>-->
+                <!--<div class="text_wrapper">-->
+                <!--<div class="text"></div>-->
+                <!--</div>-->
+                <!--</li>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!-- end box_chat -->
+
+            </div>
+        </div>
+        <!-- End main-container -->
+
+
+        <!--Footer-->
+        <div class="footer">
+            Copyright © 2018 Inet Solutions. All rights reserved.
+        </div>
+        <!--End footer-->
+
+    </div>
+    <!--end Container-->
+
+    <!-- modal_history -->
+    <div class="modal fade" id="modal_history" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <!-- modal_moreturn content-->
+            <div class="modal-content">
+                <div class="modal-header text_title">
+                    <h4 class="modal-title ">Lịch Sử Chơi</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table>
+                        <tr>
+                            <td>Lượt chơi</td>
+                            <td>Bắt đầu</td>
+                            <td>Kết thúc</td>
+                            <td>Thời gian</td>
+                        </tr>
+                        <tr>
+                            <td>Lượt 1</td>
+                            <td>9:30:25</td>
+                            <td>9:31:35</td>
+                            <td>1:00:00</td>
+                        </tr>
+                        <tr>
+                            <td>Lượt 2</td>
+                            <td>9:30:25</td>
+                            <td>9:31:35</td>
+                            <td>1:00:00</td>
+                        </tr>
+                        <tr>
+                            <td>Lượt 3</td>
+                            <td>9:30:25</td>
+                            <td>9:31:35</td>
+                            <td>1:00:00</td>
+                        </tr>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- end modal_history -->
+
+
+    <!-- end modal_history -->
+
+    <!-- modal_rank -->
+    <div class="modal fade" id="modal_rank" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- modal_rank content-->
+            <div class="modal-content modal-lg">
+                <div class="modal-header text_title">
+                    <img src="img/3.png"><h4 class="modal-title ">Bảng Xếp Hạng</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body rank">
+                    <table>
+                        <tr>
+                            <td>Hạng</td>
+                            <td>Tên người chơi</td>
+                            <td>Thời gian giữ</td>
+                        </tr>
+                        <tr>
+                            <td><p class="numbertop_1">1</p></td>
+                            <td>haha</td>
+                            <td>150s</td>
+                        </tr>
+                        <tr>
+                            <td><p class="numbertop_2">2</p></td>
+                            <td>hehe</td>
+                            <td>149s</td>
+                        </tr>
+                        <tr style="background: #66a6ff;">
+                            <td><p class="numbertop_3">3</p></td>
+                            <td>honganh</td>
+                            <td>148s</td>
+                        </tr>
+                        <tr>
+                            <td><p class="numbertop_n">4</p></td>
+                            <td>chimsedinang</td>
+                            <td>147s</td>
+                        </tr>
+                        <tr>
+                            <td><p class="numbertop_n">5</p></td>
+                            <td>Huonghana</td>
+                            <td>146s</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td><p class="numbertop_n">6</p></td>
+                            <td>Huonghana</td>
+                            <td>144s</td>
+                        </tr>
+                        <tr>
+                            <td><p class="numbertop_n">7</p></td>
+                            <td>Huonghana</td>
+                            <td>120s</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td><p class="numbertop_n">8</p></td>
+                            <td>Huonghana</td>
+                            <td>110s</td>
+                        </tr>
+                        <tr>
+                            <td><p class="numbertop_n">9</p></td>
+                            <td>Huonghana</td>
+                            <td>100s</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td><p class="numbertop_n">10</p></td>
+                            <td>Huonghana</td>
+                            <td>80s</td>
+                    </table>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <!-- end modal rank -->
+
+    <!-- modal_regulations -->
+    <div class="modal fade" id="modal_regulations" role="dialog">
+        <div class="modal-dialog  modal-lg">
+
+            <!-- modal_regulations content-->
+            <div class="modal-content">
+                <div class="modal-header text_title">
+                    <img src="img/5.png"><h4 class="modal-title ">Hướng dẫn chơi</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body regulations">
+                    <h5 style="margin-top: 10px;border-bottom: 1px solid #fff">A) Luật chơi BigTime:</h5>
+                    1. Thời gian chơi : 9h – 23h.<br>
+                    2. Người chơi có thể truy cập vào website : tintuc.vn hoặc vào trực tiếp website :
+                    game.tintuc.vn<br>
+                    3. Chỉ cần nick Facebook là Người chơi có thể tham gia chơi game Big Time
+                    ( Mỗi một nick Facebook sẽ có 10 lượt chơi miễn phí/ngày).<br>
+                    4. Sau khi đã đăng nhập Facebook thì người chơi có thể ấn nút : Play để bắt đầu trò chơi ngay lập
+                    tức.<br>
+                    5. Khi người chơi đã ấn nút Play thì trò chơi sẽ bắt đầu tính lũy thời gian cho người chơi, đến khi
+                    ngừng load
+                    thì đồng nghĩa với việc lượt chơi của người chơi đã kết thúc. Kết quả sẽ được hiển thị ngay lên trên
+                    màn
+                    hình của người chơi .<br>
+                    <h5 style="margin-top: 10px;border-bottom: 1px solid #cecece">B) Cách thức nhận giải:</h5>
+                    1. Người chơi phải cung cấp Số điện thoại cho hệ thống.<br>
+                    2. Người chơi đã share link game lên trang facebook của mình và để với chế
+                    độ public.<br>
+                    3. Xác nhận nhận giải với hệ thống trong vòng 1 ngày, nếu trong vòng 1 ngày không xác nhận nhận giải
+                    với
+                    hệ thống, giải thưởng của người chơi đó sẽ bị hủy bỏ.<br>
+                    <h5 style="margin-top: 10px;border-bottom: 1px solid #cecece">C) Bảng xếp hạng:</h5>
+                    Bảng xếp hạng sẽ hiển thị danh sách người chơi và thời gian giữ nút của người chơi , sắp xếp từ cao
+                    xuống thấp (tính theo thời gian giữ nút của người chơi ). Trường hợp 2 người chơi có thời gian giữ
+                    nút
+                    bằng nhau, ưu tiên vị trí xếp trên dành cho người chơi có thời điểm thực hiện sớm hơn. Trường hợp 2
+                    người chơi có thời gian giữ nút bằng nhau, có thời điểm bấm bắt đầu cùng lúc, ưu tiên hiển thị
+                    theo Alphabet theo tên người chơi.
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- end modal_regulations -->
+
+<!-- modal_moreturn -->
+<div class="modal fade" id="modal_moreturn" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <!-- modal_moreturn content-->
+        <div class="modal-content ">
+            <div class="modal-header text_title">
+                <img src="img/4.png">
+                <h4 class="modal-title ">Thêm Lượt Chơi</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body moreturn">
+                <div class="method_moreturn">
+                    <p>
+                        <button type="button" class="btn btn-warning btn-lg btn3d"><i class="fa fa-book"
+                                                                                      aria-hidden="true"></i> Đọc
+                            báo
+                        </button>
+
+                    </p>
+                    <p>
+                        <button type="button" class="btn btn-success btn-lg btn3d"><i class="fa fa-video-camera"
+                                                                                      aria-hidden="true"></i> Xem
+                            quảng
+                            cáo
+                        </button>
+                    </p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--end modalreturn-->
+
+<!-- modal_exchangeturn -->
+<div class="modal fade" id="modal_change_turn" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <!-- modal_moreturn content-->
+        <div class="modal-content">
+            <div class="modal-header callout callout-info">
+
+                <h4 class="modal-title">Qui đổi lượt chơi thưởng</h4>
+                <button type="button" class="close btn_close_exchange_turn" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group col-md-5">
+                    <label for="insInputPlayTurn" class="col-sm-12 control-label">Nhập số lượt muốn qui đổi:</label>
+
+                    <div class="col-sm-12">
+                        <input type="text" class="form-control effect-1" id="insInputPlayTurn"
+                               placeholder="Số lượt qui đổi" name="insInputPlayTurn">
+                        <span class="focus-border"></span>
+                    </div>
+                </div>
+
+                <div class="form-group col-md-5">
+                    <label for="" class="col-sm-12 control-label">Số lượt qui đổi trong ngày hiện còn:</label>
+                    <div class="col-sm-12">
+                        <input type="text" disabled class="number_avaible_exchange" placeholder=""
+                               name="avaible_exchange_today">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Đóng</button>
+                <button type="button" class="btn btn-primary btn_exchange_play_turn" data-id="">Qui đổi</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--end modal_exchangeturn-->
+
+
+</body>
+</html>
